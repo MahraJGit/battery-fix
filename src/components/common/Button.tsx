@@ -43,7 +43,7 @@ export function Button({
   type = "button",
 }: ButtonProps) {
   const classes = [
-    "inline-flex items-center justify-center rounded-[10px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
+    "inline-flex cursor-pointer items-center justify-center rounded-[10px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-ink",
     variantClass[variant],
     sizeClass[size],
     className,

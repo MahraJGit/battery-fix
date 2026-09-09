@@ -49,6 +49,21 @@ export const homeMetadata: Metadata = {
   },
 };
 
+export const servicesMetadata: Metadata = {
+  ...homeMetadata,
+  title: `${SITE.name} UAE | Mobile Battery Services`,
+  description:
+    "Complete battery care wherever you are. 24/7 mobile battery replacement, testing, jump starts, and AGM service across the UAE.",
+  alternates: {
+    canonical: `${SITE.url}/services`,
+  },
+  openGraph: {
+    ...homeMetadata.openGraph,
+    title: `${SITE.name} UAE | Mobile Battery Services`,
+    url: `${SITE.url}/services`,
+  },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",

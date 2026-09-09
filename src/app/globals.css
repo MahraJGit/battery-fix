@@ -34,7 +34,9 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Instant route scroll — smooth is handled only for hash targets in ScrollManager */
+  scroll-behavior: auto;
+  overflow-x: clip;
 }
 
 body {
@@ -42,6 +44,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), "Segoe UI", sans-serif;
   margin: 0;
+  overflow-x: clip;
 }
 
 .font-display {
@@ -61,6 +64,46 @@ img:not([data-nimg]) {
 a {
   text-decoration: none;
 }
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[role="button"],
+a[href] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Accent headings: stay one line on desktop, scale down fluidly */
+.heading-accent-oneline {
+  font-family: var(--font-racing), var(--font-poppins), cursive;
+  white-space: nowrap;
+  line-height: 1.05;
+  letter-spacing: -1.1px;
+  font-size: clamp(1.5rem, 4.2vw, 4rem);
+}
+
+.heading-accent-oneline-long {
+  font-family: var(--font-racing), var(--font-poppins), cursive;
+  white-space: nowrap;
+  line-height: 1.05;
+  letter-spacing: -1.1px;
+  font-size: clamp(1.25rem, 3.4vw, 3.75rem);
+}
+
+@media (max-width: 767px) {
+  .heading-accent-oneline,
+  .heading-accent-oneline-long {
+    white-space: normal;
+  }
+}
+
+/* Prevent horizontal page scroll from absolute Figma decorations */
 
 ::selection {
   background: color-mix(in srgb, var(--brand) 35%, white);

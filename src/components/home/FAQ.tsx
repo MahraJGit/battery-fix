@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const faqs = [
+const defaultFaqs = [
   {
     question: "Why is Webflow the best nocode tool?",
     answer:
-      "Webflow stands out as the leading no-code platform by giving users complete creative control over their websites without relying on developers.",
+      "Webflow stands out as the leading no-code platform by giving users complete control over their websites without relying on developers.",
   },
   {
     question: "Do you provide ongoing support?",
@@ -26,7 +26,14 @@ const faqs = [
   },
 ] as const;
 
-export function FAQ() {
+type FaqItem = { readonly question: string; readonly answer: string };
+
+type FAQProps = {
+  items?: readonly FaqItem[];
+  illustrationSrc?: string;
+};
+
+export function FAQ({ items = defaultFaqs, illustrationSrc }: FAQProps) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -38,6 +45,16 @@ export function FAQ() {
 
       <div className="mx-auto mt-8 flex w-full max-w-[1277px] flex-col items-center gap-8 lg:mt-8 lg:flex-row lg:gap-[31px]">
         <div className="relative h-[360px] w-full max-w-[545px] shrink-0 lg:h-[358px]">
+          {illustrationSrc ? (
+            <Image
+              src={illustrationSrc}
+              alt=""
+              fill
+              className="object-contain object-center"
+              sizes="545px"
+            />
+          ) : (
+            <>
           <Image
             src="/figma/faq/bg-simple.svg"
             alt=""
@@ -79,10 +96,12 @@ export function FAQ() {
             height={77}
             className="absolute left-[32%] top-[12%] w-[33%]"
           />
+            </>
+          )}
         </div>
 
         <div className="flex w-full flex-1 flex-col gap-6">
-          {faqs.map((item, index) => {
+          {items.map((item, index) => {
             const open = openIndex === index;
             return (
               <button

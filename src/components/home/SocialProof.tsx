@@ -89,7 +89,7 @@ export function SocialProof() {
           <button
             type="button"
             aria-label="Previous testimonial"
-            className="relative flex size-[70px] items-center justify-center"
+            className="relative flex size-[70px] cursor-pointer items-center justify-center"
             onClick={() => setIndex((v) => (v - 1 + testimonials.length) % testimonials.length)}
           >
             <Image src="/figma/testimonials/btn-ring.svg" alt="" fill className="object-contain" />
@@ -105,7 +105,7 @@ export function SocialProof() {
           <button
             type="button"
             aria-label="Next testimonial"
-            className="relative flex size-[70px] items-center justify-center"
+            className="relative flex size-[70px] cursor-pointer items-center justify-center"
             onClick={() => setIndex((v) => (v + 1) % testimonials.length)}
           >
             <Image src="/figma/testimonials/btn-ring.svg" alt="" fill className="object-contain" />

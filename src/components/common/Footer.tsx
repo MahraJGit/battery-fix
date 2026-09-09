@@ -22,7 +22,7 @@ const quickLinks = [
 
 const contacts = [
   { icon: "/figma/footer/phone.svg", label: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
-  { icon: "/figma/footer/wa.svg", label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}`, flipY: true },
+  { icon: "/figma/footer/wa.svg", label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
   { icon: "/figma/footer/mail.svg", label: SITE.email, href: `mailto:${SITE.email}` },
   { icon: "/figma/footer/pin.svg", label: SITE.address, href: undefined },
 ] as const;
@@ -89,14 +89,9 @@ export function Footer() {
             <ul className="space-y-[15px] text-sm text-white/55">
               {contacts.map((item) => (
                 <li key={item.label} className="flex items-center gap-3">
-                  <FigmaIcon
-                    src={item.icon}
-                    width={15}
-                    height={14}
-                    flipY={"flipY" in item ? Boolean(item.flipY) : false}
-                  />
+                  <FigmaIcon src={item.icon} width={15} height={15} />
                   {item.href ? (
-                    <a href={item.href} className="text-white/55 hover:text-white">
+                    <a href={item.href} className="cursor-pointer text-white/55 hover:text-white">
                       {item.label}
                     </a>
                   ) : (

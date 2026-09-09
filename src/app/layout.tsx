@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Poppins, Racing_Sans_One } from "next/font/google";
+import {
+  Inter,
+  Manrope,
+  Montserrat,
+  Poppins,
+  Racing_Sans_One,
+  Space_Grotesk,
+  Space_Mono,
+} from "next/font/google";
 import { Footer } from "@/components/common/Footer";
 import { Header } from "@/components/common/Header";
+import { ScrollManager } from "@/components/common/ScrollManager";
 import { homeMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -32,6 +41,27 @@ const racing = Racing_Sans_One({
   display: "swap",
 });
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = homeMetadata;
 
 export default function RootLayout({
@@ -42,8 +72,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${racing.variable} antialiased`}
+        className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${racing.variable} ${manrope.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
       >
+        <ScrollManager />
         <Header />
         <main>{children}</main>
         <Footer />

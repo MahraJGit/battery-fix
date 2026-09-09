@@ -7,8 +7,8 @@ type FigmaIconProps = {
   height: number;
   className?: string;
   /**
-   * Some Figma MCP vector exports are vertically inverted in the SVG file.
-   * Default false — only enable when the asset is visibly upside-down.
+   * Prefer fixing SVG assets over flips.
+   * Only enable when an arrow/asset is visibly mirrored vs design.
    */
   flipY?: boolean;
   flipX?: boolean;
@@ -28,20 +28,35 @@ export function FigmaIcon({
   const flips = [flipX ? "scale-x-[-1]" : "", flipY ? "scale-y-[-1]" : ""]
     .filter(Boolean)
     .join(" ");
+  const isSvg = src.endsWith(".svg");
 
   return (
     <span
-      className={`inline-flex items-center justify-center ${flips} ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center ${flips} ${className}`}
       style={{ width, height }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="block h-full w-full max-w-none"
-        priority={priority}
-      />
+      {isSvg ? (
+        // Native <img> keeps SVG vectors crisp — next/image can soft-rasterize small icons
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="block h-full w-full max-w-none"
+          decoding="async"
+          fetchPriority={priority ? "high" : "auto"}
+        />
+      ) : (
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="block h-full w-full max-w-none"
+          priority={priority}
+        />
+      )}
     </span>
   );
 }
