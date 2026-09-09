@@ -2,25 +2,66 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #02040f;
+  --brand: #f0782a;
+  --brand-dark: #d06217;
+  --brand-soft: #fdf2eb;
+  --ink: #02040f;
+  --ink-deep: #07080f;
+  --panel: #13172a;
+  --muted: #596475;
+  --muted-soft: #687386;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-panel: var(--panel);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+  --font-accent: var(--font-racing);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+.font-display {
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+}
+
+.font-accent {
+  font-family: var(--font-racing), var(--font-poppins), cursive;
+}
+
+/* Do not force height:auto on all imgs — it breaks Next/Image icon sizing. */
+img:not([data-nimg]) {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 35%, white);
 }

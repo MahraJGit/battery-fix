@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import { SITE } from "./constants";
+
+const title = `${SITE.name} UAE | 24/7 Mobile Car Battery Replacement`;
+const description =
+  "Dead battery? Battery Fix comes to you across the UAE. Fast 24/7 mobile battery replacement, testing, and jump-start at your location.";
+
+export const homeMetadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title,
+  description,
+  keywords: [
+    "car battery replacement UAE",
+    "mobile battery service Dubai",
+    "24/7 battery replacement",
+    "jump start Dubai",
+    "Battery Fix UAE",
+    "roadside battery Sharjah",
+  ],
+  authors: [{ name: SITE.legalName }],
+  openGraph: {
+    type: "website",
+    locale: "en_AE",
+    url: SITE.url,
+    siteName: SITE.legalName,
+    title,
+    description,
+    images: [
+      {
+        url: "/images/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Battery Fix UAE mobile battery service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/og-cover.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: SITE.url,
+  },
+};
+
+export const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  name: SITE.legalName,
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  image: `${SITE.url}/images/og-cover.jpg`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  areaServed: ["Dubai", "Sharjah", "Ajman", "Abu Dhabi", "UAE"],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
+  priceRange: "$$",
+};

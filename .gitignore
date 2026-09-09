@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI / editor tooling (keep out of shared review)
+.cursor/
+.cursorrules
+.claude/
+.aider*
+.continue/
+.windsurf/
+.copilot/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.github/copilot-instructions.md
+*.canvas.tsx
+.vscode/settings.json
+.idea/
+*.code-workspace
