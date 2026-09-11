@@ -103,7 +103,26 @@ button:disabled,
   }
 }
 
-/* Prevent horizontal page scroll from absolute Figma decorations */
+/* About Us trust bar marquee */
+@keyframes about-trust-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.about-trust-marquee {
+  animation: about-trust-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-trust-marquee {
+    animation: none;
+  }
+}
 
 ::selection {
   background: color-mix(in srgb, var(--brand) 35%, white);

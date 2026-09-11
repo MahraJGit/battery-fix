@@ -64,6 +64,21 @@ export const servicesMetadata: Metadata = {
   },
 };
 
+export const aboutMetadata: Metadata = {
+  ...homeMetadata,
+  title: `${SITE.name} UAE | About Us`,
+  description:
+    "We are the mechanics who come to you. Learn about Battery Fix UAE — our story, mission, vision, and the principles behind our 24/7 mobile battery service.",
+  alternates: {
+    canonical: `${SITE.url}/about`,
+  },
+  openGraph: {
+    ...homeMetadata.openGraph,
+    title: `${SITE.name} UAE | About Us`,
+    url: `${SITE.url}/about`,
+  },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
