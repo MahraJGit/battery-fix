@@ -1,24 +1,16 @@
 import Image from "next/image";
 import { ABOUT_PRINCIPLES } from "@/lib/about-page";
 
-function PrincipleIcon({ src }: { src: string }) {
+/** Exact Figma principle mark: white 42px disc + orange verified-check glyph */
+function PrincipleIcon() {
   return (
     <span className="inline-flex size-[42px] shrink-0 items-center justify-center rounded-full bg-white">
-      <span
-        className="block size-[18px]"
-        style={{
-          backgroundColor: "#f0782a",
-          maskImage: `url(${src})`,
-          WebkitMaskImage: `url(${src})`,
-          maskSize: "contain",
-          WebkitMaskSize: "contain",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-          maskPosition: "center",
-          WebkitMaskPosition: "center",
-        }}
-        aria-hidden
-      />
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+        <path
+          d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9C1.5 13.14 4.86 16.5 9 16.5C13.14 16.5 16.5 13.14 16.5 9C16.5 4.86 13.14 1.5 9 1.5ZM9 15C5.6925 15 3 12.3075 3 9C3 5.6925 5.6925 3 9 3C12.3075 3 15 5.6925 15 9C15 12.3075 12.3075 15 9 15ZM12.4425 5.685L7.5 10.6275L5.5575 8.6925L4.5 9.75L7.5 12.75L13.5 6.75L12.4425 5.685Z"
+          fill="#F0782A"
+        />
+      </svg>
     </span>
   );
 }
@@ -57,7 +49,7 @@ export function Principles() {
               <div className="absolute inset-0 bg-[#f0782a]" aria-hidden />
               <div className="absolute inset-x-0 top-[8%] bottom-[8%] flex flex-col justify-center gap-3 p-4">
                 <div className="flex w-full items-center gap-2.5">
-                  <PrincipleIcon src={card.icon} />
+                  <PrincipleIcon />
                   <div className="h-px flex-1 bg-white/45" />
                 </div>
                 <div className="relative w-full">

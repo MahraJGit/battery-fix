@@ -39,7 +39,7 @@ export function AboutHero() {
             Born out of frustration with traditional garages, Mechanic Co was built to make car
             repairs simple, transparent and stress free for every car owner.
           </p>
-          <div className="flex w-full flex-col gap-2.5 sm:flex-row sm:items-center lg:w-[408px]">
+          <div className="flex w-full flex-col gap-2.5 sm:flex-row sm:items-stretch lg:w-[408px]">
             <a
               href={`tel:${SITE.phone}`}
               className="inline-flex h-[61px] flex-1 cursor-pointer items-center justify-center rounded-[34px] bg-[#f97316] px-6 text-lg text-white"
@@ -49,9 +49,9 @@ export function AboutHero() {
             </a>
             <a
               href={`https://wa.me/${SITE.whatsapp}`}
-              className="inline-flex h-[62px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-md border border-white/25 px-4 text-base font-semibold text-white sm:w-[199px]"
+              className="inline-flex h-[61px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-md border border-white/25 px-4 text-base font-semibold text-white sm:w-[199px]"
             >
-              <FigmaIcon src="/figma/about/wa-icon.svg" width={19} height={18} />
+              <FigmaIcon src="/figma/about/wa-icon.svg" width={19} height={18} flipY />
               WhatsApp Us
             </a>
           </div>

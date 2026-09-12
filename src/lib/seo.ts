@@ -79,6 +79,21 @@ export const aboutMetadata: Metadata = {
   },
 };
 
+export const contactMetadata: Metadata = {
+  ...homeMetadata,
+  title: `${SITE.name} UAE | Contact Us`,
+  description:
+    "Facing a battery problem? Contact Battery Fix UAE — call, email, or send a message for fast 24/7 mobile battery replacement and roadside help.",
+  alternates: {
+    canonical: `${SITE.url}/contact`,
+  },
+  openGraph: {
+    ...homeMetadata.openGraph,
+    title: `${SITE.name} UAE | Contact Us`,
+    url: `${SITE.url}/contact`,
+  },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
