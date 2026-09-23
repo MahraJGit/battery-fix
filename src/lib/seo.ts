@@ -94,6 +94,21 @@ export const contactMetadata: Metadata = {
   },
 };
 
+export const termsMetadata: Metadata = {
+  ...homeMetadata,
+  title: `${SITE.name} UAE | Terms & Conditions`,
+  description:
+    "Read the Battery Fix UAE terms and conditions covering website use, responsibilities, intellectual property, and service limitations.",
+  alternates: {
+    canonical: `${SITE.url}/terms`,
+  },
+  openGraph: {
+    ...homeMetadata.openGraph,
+    title: `${SITE.name} UAE | Terms & Conditions`,
+    url: `${SITE.url}/terms`,
+  },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",

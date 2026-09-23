@@ -78,8 +78,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${dmSans.variable} ${montserrat.variable} ${poppins.variable} ${racing.variable} ${manrope.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
       >
         <ScrollManager />

@@ -18,6 +18,7 @@ const quickLinks = [
   { label: "How It Works", href: "/#about" },
   { label: "Areas", href: "/#contact" },
   { label: "FAQs", href: "/#faq" },
+  { label: "Terms & Conditions", href: "/terms" },
 ] as const;
 
 const contacts = [
