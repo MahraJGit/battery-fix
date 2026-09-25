@@ -7,32 +7,28 @@ const cards = [
     description: "Day or night, we come to you.",
     icon: "/figma/fast-help/icon-clock.svg",
     watermark: "/figma/fast-help/wm-clock.svg",
-    watermarkStyle: { left: 223, top: -11, width: 85, height: 85 },
-    radius: "rounded-2xl lg:rounded-l-2xl lg:rounded-r-none",
+    watermarkStyle: { top: -11, width: 85, height: 85 },
   },
   {
     title: "Fast Response",
     description: "Quick arrival when you need it most.",
     icon: "/figma/fast-help/icon-gauge.svg",
     watermark: "/figma/fast-help/wm-gauge.svg",
-    watermarkStyle: { left: 226.75, top: -8, width: 85, height: 73 },
-    radius: "rounded-2xl",
+    watermarkStyle: { top: -8, width: 85, height: 73 },
   },
   {
     title: "Professional Technicians",
     description: "Trained experts you can rely on.",
     icon: "/figma/fast-help/icon-team.svg",
     watermark: "/figma/fast-help/wm-team.svg",
-    watermarkStyle: { left: 221.5, top: -19, width: 85, height: 85 },
-    radius: "rounded-2xl",
+    watermarkStyle: { top: -19, width: 85, height: 85 },
   },
   {
     title: "Warranty-Backed Service",
     description: "Covered work for total peace of mind.",
     icon: "/figma/fast-help/icon-shield.svg",
     watermark: "/figma/fast-help/wm-shield.svg",
-    watermarkStyle: { left: 221.25, top: -12, width: 85, height: 104 },
-    radius: "rounded-2xl lg:rounded-r-2xl lg:rounded-l-none",
+    watermarkStyle: { top: -12, width: 85, height: 104 },
   },
 ] as const;
 
@@ -102,14 +98,14 @@ export function FastHelp() {
           </div>
 
           {/* HorizontalBorder: 1232×213, gap 16px, border-top, z-index 2 */}
-          <div className="relative z-[2] flex w-full max-w-[1232px] flex-col gap-4 border-t border-[#eeeff0] sm:grid sm:grid-cols-2 lg:flex lg:h-[213px] lg:flex-row lg:items-start lg:justify-center lg:gap-4">
+          <div className="relative z-[2] grid w-full max-w-[1232px] grid-cols-1 gap-4 pt-4 sm:grid-cols-2 lg:h-[213px] lg:grid-cols-4 lg:items-stretch">
             {cards.map((card) => (
               <article
                 key={card.title}
-                className={`relative isolate flex w-full flex-col items-start gap-4 overflow-hidden bg-[#fdf2eb] p-8 lg:h-[212px] lg:min-w-0 lg:flex-1 ${card.radius}`}
+                className="relative isolate flex min-h-[212px] w-full flex-col items-start gap-4 overflow-hidden rounded-2xl bg-[#fdf2eb] p-8"
               >
                 <span
-                  className="pointer-events-none absolute z-[3] hidden lg:block"
+                  className="pointer-events-none absolute right-[-8px] z-[3] hidden lg:block"
                   style={card.watermarkStyle}
                   aria-hidden
                 >
@@ -132,7 +128,7 @@ export function FastHelp() {
                   <FigmaIcon src={card.icon} width={25} height={24} />
                 </div>
 
-                <h3 className="relative z-[1] font-display text-lg font-semibold leading-7 text-[#242424]">
+                <h3 className="relative z-[1] min-h-14 font-display text-lg font-semibold leading-7 text-[#242424]">
                   {card.title}
                 </h3>
                 <p className="relative z-[2] text-sm leading-5 text-[#687386]">{card.description}</p>

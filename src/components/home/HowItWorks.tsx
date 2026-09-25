@@ -23,8 +23,8 @@ export function HowItWorks() {
       }}
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-14">
-        <div className="max-w-[672px]">
-          <h2 className="font-accent text-[40px] leading-[1.1] tracking-[-0.02em] md:text-[64px] md:leading-[55px]">
+        <div className="w-full max-w-[672px] md:max-w-[760px]">
+          <h2 className="font-accent text-[22px] leading-[1.05] tracking-[-0.02em] md:text-[56px] md:leading-[55px]">
             <span className="text-white">From Breakdown To </span>
             <span className="text-[#f07828]">Back On</span>
             <span className="block text-[#f07828]">The Road.</span>

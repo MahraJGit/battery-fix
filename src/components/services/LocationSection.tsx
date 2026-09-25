@@ -13,7 +13,7 @@ export function LocationSection() {
             <h2 className="font-accent text-[40px] leading-[48px] tracking-[-1.2px] text-white md:text-[48px]">
               Your location.
               <br />
-              Our technician.
+              Our <span className="text-[#f07828]">technician.</span>
             </h2>
             <p className="text-lg leading-[22px] text-white">
               Whether you&apos;re at home, at work, in a parking lot, or stuck roadside, our mobile

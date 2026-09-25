@@ -2,6 +2,26 @@ type IconProps = {
   className?: string;
 };
 
+export function MailIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 22 18" fill="none" aria-hidden>
+      <rect x="1" y="1" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="m2.5 3 8.5 7 8.5-7" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function LocationIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 14.59 14" fill="none" aria-hidden style={{ transform: "scaleY(-1)" }}>
+      <path
+        d="M7.295 0.665 3.585 4.375C2.908 5.044 2.453 5.837 2.22 6.755a5.35 5.35 0 0 0 0 2.66c.233.918.686 1.713 1.359 2.386.673.673 1.468 1.13 2.386 1.371a5.35 5.35 0 0 0 2.66 0c.918-.241 1.713-.698 2.386-1.371.673-.673 1.126-1.468 1.359-2.386a5.35 5.35 0 0 0 0-2.66c-.233-.918-.688-1.711-1.365-2.38L7.295.665Zm2.882 4.538c.529.521.886 1.136 1.073 1.844a4.08 4.08 0 0 1 0 2.077c-.187.708-.543 1.324-1.068 1.849a4.08 4.08 0 0 1-1.849 1.068 4.08 4.08 0 0 1-2.077 0 4.08 4.08 0 0 1-1.849-1.068 4.08 4.08 0 0 1-1.068-1.849 4.08 4.08 0 0 1 0-2.077c.187-.708.545-1.323 1.073-1.844L7.295 2.31l2.882 2.893ZM7.295 6.918c-.21 0-.404.053-.583.158a1.17 1.17 0 0 0-.426.426c-.105.179-.158.373-.158.583s.053.404.158.583c.105.179.247.321.426.426.179.105.373.158.583.158s.404-.053.583-.158c.179-.105.321-.247.426-.426.105-.179.158-.373.158-.583s-.053-.404-.158-.583a1.17 1.17 0 0 0-.426-.426 1.17 1.17 0 0 0-.583-.158Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 export function PhoneIcon({ className = "h-4 w-4" }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>

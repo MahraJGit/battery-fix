@@ -109,6 +109,21 @@ export const termsMetadata: Metadata = {
   },
 };
 
+export const privacyMetadata: Metadata = {
+  ...homeMetadata,
+  title: `${SITE.name} UAE | Privacy Policy`,
+  description:
+    "Read the Battery Fix UAE privacy policy covering the information we collect, how we use it, and the choices available to you.",
+  alternates: {
+    canonical: `${SITE.url}/privacy`,
+  },
+  openGraph: {
+    ...homeMetadata.openGraph,
+    title: `${SITE.name} UAE | Privacy Policy`,
+    url: `${SITE.url}/privacy`,
+  },
+};
+
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",

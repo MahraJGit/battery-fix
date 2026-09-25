@@ -23,67 +23,6 @@ export function BatteryProducts() {
             fits your needs and budget — no confusing technical overload.
           </p>
         </div>
-
-        <div className="h-px w-full bg-[#f2f0e9]" />
-
-        <div className="grid w-full gap-px md:grid-cols-2 lg:grid-cols-3">
-          {BATTERY_PRODUCTS.map((product, index) => (
-            <article
-              key={`${product.name}-${index}`}
-              className="flex flex-col gap-6 bg-[#fdfcfa]"
-            >
-              <div className="relative h-[280px] w-full">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  sizes="426px"
-                  className="object-cover"
-                />
-                <span className="absolute left-4 top-4 rounded-full bg-[#fdfcfa]/90 px-3 py-1.5 font-[family-name:var(--font-space-mono)] text-[11px] uppercase tracking-[0.275px] text-[#151b21] backdrop-blur-[4px]">
-                  {product.badge}
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-1 px-4">
-                <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold leading-7 text-[#090e12]">
-                  {product.name}
-                </h3>
-                <p className="font-[family-name:var(--font-manrope)] text-sm leading-5 text-[#485460]">
-                  {product.type}
-                </p>
-              </div>
-
-              <div className="border-t border-[#f2f0e9] px-4 py-3">
-                <div className="flex items-end gap-6 py-1.5">
-                  <span className="w-[56px] shrink-0 font-[family-name:var(--font-space-mono)] text-[11px] uppercase tracking-[0.275px] text-[#95a0ab]">
-                    Fit
-                  </span>
-                  <span className="font-[family-name:var(--font-manrope)] text-sm text-[#222a32]">
-                    {product.fit}
-                  </span>
-                </div>
-                <div className="flex items-end gap-6 py-1.5">
-                  <span className="w-[56px] shrink-0 font-[family-name:var(--font-space-mono)] text-[11px] uppercase tracking-[0.275px] text-[#95a0ab]">
-                    Warranty
-                  </span>
-                  <span className="font-[family-name:var(--font-manrope)] text-sm text-[#222a32]">
-                    {product.warranty}
-                  </span>
-                </div>
-                <div className="flex items-center gap-6 py-1.5">
-                  <span className="w-[56px] shrink-0 font-[family-name:var(--font-space-mono)] text-[11px] uppercase tracking-[0.275px] text-[#95a0ab]">
-                    Status
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 font-[family-name:var(--font-manrope)] text-sm text-[#222a32]">
-                    <span className="size-1.5 rounded-full bg-[#125b3a]" />
-                    {product.status}
-                  </span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );

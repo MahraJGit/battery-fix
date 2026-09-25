@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FigmaIcon } from "@/components/common/FigmaIcon";
+import { LocationIcon, MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
 import { SITE } from "@/lib/constants";
 
 const services = [
@@ -22,10 +23,10 @@ const quickLinks = [
 ] as const;
 
 const contacts = [
-  { icon: "/figma/footer/phone.svg", label: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
-  { icon: "/figma/footer/wa.svg", label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
-  { icon: "/figma/footer/mail.svg", label: SITE.email, href: `mailto:${SITE.email}` },
-  { icon: "/figma/footer/pin.svg", label: SITE.address, href: undefined },
+  { icon: PhoneIcon, label: SITE.phoneDisplay, href: `tel:${SITE.phone}` },
+  { icon: WhatsAppIcon, label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
+  { icon: MailIcon, label: SITE.email, href: `mailto:${SITE.email}` },
+  { icon: LocationIcon, label: SITE.address, href: undefined },
 ] as const;
 
 export function Footer() {
@@ -90,7 +91,7 @@ export function Footer() {
             <ul className="space-y-[15px] text-sm text-white/55">
               {contacts.map((item) => (
                 <li key={item.label} className="flex items-center gap-3">
-                  <FigmaIcon src={item.icon} width={15} height={15} />
+                  <item.icon className="h-[15px] w-[15px] shrink-0 text-brand" />
                   {item.href ? (
                     <a href={item.href} className="cursor-pointer text-white/55 hover:text-white">
                       {item.label}

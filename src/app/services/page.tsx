@@ -2,6 +2,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 import { FAQ } from "@/components/home/FAQ";
 import { Services } from "@/components/home/Services";
 import { SocialProof } from "@/components/home/SocialProof";
+import { BatteryProducts } from "@/components/services/BatteryProducts";
 import { LocationSection } from "@/components/services/LocationSection";
 import { OurProcess } from "@/components/services/OurProcess";
 import { QuoteForm } from "@/components/services/QuoteForm";
@@ -18,11 +19,12 @@ export default function ServicesPage() {
     <>
       <ServicesHero />
       <Services showViewAll={false} />
+      <BatteryProducts />
+      <SocialProof />
       <WhyChooseUs />
       <OurProcess />
       <WhatYouGet />
       <LocationSection />
-      <SocialProof />
       <FAQ items={SERVICES_FAQS} illustrationSrc="/figma/services-page/faqs_cuate.svg" />
       <QuoteForm />
       <CTABanner />
